@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>咸亨-康桥1209</title>
+    <meta name="viewport"  content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta name="author" content="Augus"/>
+    <link rel="stylesheet" href="css/clock.css"/>
+</head>
+<style>
+    html,body{padding: 0; margin: 0;}
+
+    #miao.miaoChange:after{
+        /*height: 190px;*/
+    }
+</style>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+	<img src="http://xianheng.lopbox.com/img/backend.png" border="0" width="100%" height="auto" usemap="#mymap">
+	<map id="#mymap" name="mymap">
+		<area shape="rect" coords="120,740,210,780"   id="loupan"  href ="loupan.html" alt="loupan" />
+		<area shape="rect" coords="500,730,610,780"   id="dichan"  href ="dichan.html" alt="dichan" />
+		<area shape="rect" coords="80,820,180,870"   id="guwen"  href ="guwen.html" alt="guwen" />
+		<area shape="rect" coords="540,820,660,870"   id="huxing"  href ="huxing.html" alt="huxing" />
+		<area shape="rect" coords="70,910,170,960"   id="ditu"  href ="http://wgw.sy3000.com/index.php?g=Wap&m=Company&a=map&token=wfwuep1418953952&wecha_id=&companyid=4" alt="ditu" />
+		<area shape="rect" coords="560,900,660,960"   id="fangdai"  href ="http://m.leju.com/tools/" alt="fangdai" />
+		<area shape="rect" coords="120,1000,200,1040"   id="yangban"  href ="yangban.html" alt="yangban" />
+		<area shape="rect" coords="520,1000,620,1040"   id="huodong"  href ="http://mp.weixin.qq.com/s/07NF4Tm-QH2ZPpgw-rwlLw" alt="huodong" />
+		<area shape="rect" coords="182,720,538,1080"  id="zhong" href="#" alt="zhong"  />
+	</map>
+    <div id="miao"></div>
+    <div id="fen"></div>
+    <div id="shi"></div>
+    <div id="point"></div>
+
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js" ></script>
+	<script>
+	var miao = document.getElementById("miao");
+    var fen = document.getElementById("fen");
+    var shi = document.getElementById("shi");
+
+    var clock = setInterval(function () {
+        var nowDate = new Date();//每次读取当前时间
+        var hour = nowDate.getHours();
+        var minute = nowDate.getMinutes();
+        var second = nowDate.getSeconds();
+
+        var circleHour = hour % 12 * 30;
+        shi.style.transform = "rotate(" + circleHour + "deg)";//读取到的时间为24小时制，转换为12小时
+        fen.style.transform = "rotate(" + minute * 6 + "deg)";
+        miao.style.transform = "rotate(" + second * 6 + "deg)";
+    }, 1000);
+
+		// $("#loupan").click(function(){alert("楼盘亮点"); }); $("#dichan").click(function(){alert("咸亨地产"); }); $("#guwen").click(function(){alert("置业顾问"); }); $("#huxing").click(function(){alert("户型手册"); }); $("#ditu").click(function(){alert("项目地图"); }); $("#fangdai").click(function(){alert("房贷计算"); }); $("#yangban").click(function(){alert("样板间"); }); $("#huodong").click(function(){alert("最新活动"); });
+		 //重新定位map位置
+            function rsz(){
+                //正常情况下为386尺寸:计算比例
+                var bl=$("body").innerWidth()/720;
+                // var hl= 1280*bl;
+                let wBody=$("body").innerWidth();
+                let hBody= 1280*bl;;
+                // let hBody=
+                let hMiaoBL = 190/720;
+                let hFenBL  = 150/720;
+                let hShiBL = 120/720;
+                let wMiaoBL = 2/720;
+                let wShiFenBL = 6/720;
+                //重新计算位置
+                $("#loupan").attr({"coords":bl*120+","+bl*740+","+bl*210+","+bl*780})
+				$("#dichan").attr({"coords":bl*500+","+bl*730+","+bl*610+","+bl*780})
+				$("#guwen").attr({"coords":bl*80+","+bl*820+","+bl*180+","+bl*870})
+				$("#huxing").attr({"coords":bl*540+","+bl*820+","+bl*660+","+bl*870})
+				$("#ditu").attr({"coords":bl*70+","+bl*910+","+bl*170+","+bl*960})
+				$("#fangdai").attr({"coords":bl*560+","+bl*900+","+bl*660+","+bl*960})
+				$("#yangban").attr({"coords":bl*120+","+bl*1000+","+bl*200+","+bl*1040})
+				$("#huodong").attr({"coords":bl*520+","+bl*1000+","+bl*620+","+bl*1040})
+				$("#zhong").attr({"coords":bl*182+","+bl*720+","+bl*538+","+bl*1080})
+                $("#point").css({"top": hBody*0.70132})
+                $("#miao").css({"top": hBody*0.70132})
+                $("#fen").css({"left": wBody*0.50410132})
+                $("#fen").css({"top": hBody*0.70132})
+                $("#shi").css({"top": hBody*0.70132})
+                $("#shi").css({"left": wBody*0.50410132})
+
+				// $(".t7").css({"margin-top": -hl*0.25})
+                // $('#miao').addClass("miaoChange").css({"height":});
+                
+
+                document.styleSheets[0].addRule('#miao::after','height:'+wBody*hMiaoBL+'px');
+                document.styleSheets[0].addRule('#miao::after','width:'+wBody*wMiaoBL+'px');
+                document.styleSheets[0].addRule('#miao::after','top:-20px');
+
+                document.styleSheets[0].addRule('#fen::after','height:'+wBody*hFenBL+'px');
+                document.styleSheets[0].addRule('#fen::after','width:'+wBody*wShiFenBL+'px');
+                document.styleSheets[0].addRule('#fen::after','top: '+ (-wBody*hFenBL+20) +'px');
+
+                document.styleSheets[0].addRule('#shi::after','height:'+wBody*hShiBL+'px');
+                document.styleSheets[0].addRule('#shi::after','width:'+wBody*wShiFenBL+'px');
+                document.styleSheets[0].addRule('#shi::after','top:'+ (-wBody*hShiBL+20) +'px');
+            }
+            //窗口宽度改变时执行
+            $(window).resize(function() {
+                rsz();
+            });
+            
+            //页面初始化时候执行
+            $(function(){
+                rsz();
+            })
+	</script>
+</body>
+</html>

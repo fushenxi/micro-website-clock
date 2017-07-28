@@ -1,0 +1,154 @@
+body, div, p, span, span, ul, li, ol, dl, dt, dd {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    width: 100%
+}
+
+
+.t4 {
+    position: relative;
+    /*width: 356px;*/
+    /*height: 372px;*/
+    border-radius: 50%;
+    z-index: 11;
+    font-size: 20px;;
+    color: #8da6b8;
+    font-family: Arial;
+
+}
+
+.t4 i {
+    font-style: normal
+}
+
+.hour {
+    position: absolute;
+}
+
+.hour3 {
+    right: 30px;
+    top: 50%;
+    margin-top: -7px;
+
+}
+
+.hour6 {
+    left: 50%;
+    bottom: 27px;
+    margin-left: -5px;
+
+}
+
+.hour9 {
+    left: 30px;
+    top: 50%;
+    margin-top: -7px;
+
+}
+
+.hour12 {
+    left: 50%;
+    top: 30px;
+    margin-left: -10px;
+}
+
+.t4:before {
+    content: "";
+    position: absolute;
+    /*width: 178px;*/
+    /*height: 186px;*/
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.t4:after {
+    content: "";
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    /*width: 506px;*/
+    /*height: 529px;*/
+    border-radius: 50%;
+    z-index: 9;
+
+}
+
+
+
+#miao {
+    z-index: 23;
+}
+
+#fen {
+    z-index: 22;
+
+}
+
+#shi {
+    z-index: 21;
+
+}
+#shi:after{
+    content: "";
+    height: 50px;
+    width: 6px;
+    position: absolute;
+    /*top: 30px;*/
+    /*left:2px;*/
+    background: #000000;
+    /*border-radius: 8px 8px 8px 8px;*/
+    z-index: -1;
+}
+#fen:after{
+    content: "";
+    height: 75px;
+    width: 4px;
+    position: absolute;
+    /*top: -30px;*/
+    /*left:3px;*/
+    background: #000000;
+    /*border-radius: 8px 8px 8px 8px;*/
+    z-index: -1;
+}
+#miao:after{
+    content: "";
+    height: 80px;
+    width: 1px;
+    position: absolute;
+    /*top: 48px;*/
+    /*left:4px;*/
+    background: #000000;
+    z-index: -1;
+    /*box-shadow: 5px 10px 8px 3px #B2C3D4;*/
+
+}
+#miao, #fen, #shi {
+    position: absolute;
+    left: 50%;
+    /*height: 86px;*/
+    /*width: 10px;*/
+    /*margin-left: -5px;*/
+    top: 70.3125%;
+}
+
+#point{ position: absolute; left:50%; top: 70%; width: 16px; height:16px; margin-left: -8px; margin-top: -8px; z-index: 999;    border-radius: 50%;  box-shadow: 0px 3px 8px -1px #0f4873;}
+#point:before,#point:after{
+    content: "";
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    top:0%;
+    background: #000000;
+    border-radius: 50%;
+    z-index: 1; }
+
+#point:before {
+    width: 16px; height:16px;
+}
+#point:after {
+    background: #000000; left: 3px; top:3px;
+}
